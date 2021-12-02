@@ -8,7 +8,7 @@ namespace ILveILCEJSON_BLL
 {
     public class ILILCEServis
     {
-
+        
 
     }
 }

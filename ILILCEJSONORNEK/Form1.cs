@@ -22,5 +22,20 @@ namespace ILILCEJSONORNEK
 
         }
 
+        private void ILSorgulamaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Açık bir form varsa kapatılacak.
+            if (this.ActiveMdiChild != null)
+            {
+                this.ActiveMdiChild.Hide();
+            }
+
+            FormILSorgulama formILSorgulama = new FormILSorgulama();
+            formILSorgulama.MdiParent = this;
+            formILSorgulama.Show();
+            //form içinde form boyutlarunda göstermesi için ayarlama yap
+            this.LayoutMdi(MdiLayout.TileVertical);
+
+        }
     }
 }

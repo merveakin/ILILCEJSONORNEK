@@ -31,7 +31,7 @@ namespace ILILCEJSONORNEK
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.ILToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ıLSorgulamaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ILSorgulamaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ILCEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ıLCESorgulamaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
@@ -52,16 +52,17 @@ namespace ILILCEJSONORNEK
             // ILToolStripMenuItem
             // 
             this.ILToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ıLSorgulamaToolStripMenuItem});
+            this.ILSorgulamaToolStripMenuItem});
             this.ILToolStripMenuItem.Name = "ILToolStripMenuItem";
             this.ILToolStripMenuItem.Size = new System.Drawing.Size(34, 24);
             this.ILToolStripMenuItem.Text = "IL";
             // 
-            // ıLSorgulamaToolStripMenuItem
+            // ILSorgulamaToolStripMenuItem
             // 
-            this.ıLSorgulamaToolStripMenuItem.Name = "ıLSorgulamaToolStripMenuItem";
-            this.ıLSorgulamaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.ıLSorgulamaToolStripMenuItem.Text = "ILSorgulama";
+            this.ILSorgulamaToolStripMenuItem.Name = "ILSorgulamaToolStripMenuItem";
+            this.ILSorgulamaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.ILSorgulamaToolStripMenuItem.Text = "ILSorgulama";
+            this.ILSorgulamaToolStripMenuItem.Click += new System.EventHandler(this.ILSorgulamaToolStripMenuItem_Click);
             // 
             // ILCEToolStripMenuItem
             // 
@@ -74,7 +75,7 @@ namespace ILILCEJSONORNEK
             // ıLCESorgulamaToolStripMenuItem
             // 
             this.ıLCESorgulamaToolStripMenuItem.Name = "ıLCESorgulamaToolStripMenuItem";
-            this.ıLCESorgulamaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.ıLCESorgulamaToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
             this.ıLCESorgulamaToolStripMenuItem.Text = "ILCESorgulama";
             // 
             // Form1
@@ -99,7 +100,7 @@ namespace ILILCEJSONORNEK
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem ILToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ıLSorgulamaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ILSorgulamaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ILCEToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ıLCESorgulamaToolStripMenuItem;
     }

@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\ILveILCEJSON_BLL\ILveILCEJSON_BLL.csproj" />
     <ProjectReference Include="..\ILveILCEJSON_ENTITYMODELS\ILveILCEJSON_ENTITYMODELS.csproj" />
   </ItemGroup>
