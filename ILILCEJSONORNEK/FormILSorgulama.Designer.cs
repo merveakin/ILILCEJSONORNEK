@@ -29,6 +29,7 @@ namespace ILILCEJSONORNEK
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblILSecimi = new System.Windows.Forms.Label();
             this.comboBoxILSecimi = new System.Windows.Forms.ComboBox();
             this.btnSec = new System.Windows.Forms.Button();
@@ -38,6 +39,13 @@ namespace ILILCEJSONORNEK
             this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader5 = new System.Windows.Forms.ColumnHeader();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBoxIl = new System.Windows.Forms.GroupBox();
+            this.richTextBoxIL = new System.Windows.Forms.RichTextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.detayGosterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupBoxIl.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblILSecimi
@@ -75,11 +83,12 @@ namespace ILILCEJSONORNEK
             this.columnHeader3,
             this.columnHeader4,
             this.columnHeader5});
+            this.listView1.ContextMenuStrip = this.contextMenuStrip1;
             this.listView1.GridLines = true;
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(12, 44);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(797, 613);
+            this.listView1.Size = new System.Drawing.Size(667, 613);
             this.listView1.TabIndex = 3;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -109,11 +118,56 @@ namespace ILILCEJSONORNEK
             this.columnHeader5.Text = "WebSitesi";
             this.columnHeader5.Width = 150;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 35);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(134, 20);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "İl Hakkında Bilgiler";
+            // 
+            // groupBoxIl
+            // 
+            this.groupBoxIl.Controls.Add(this.richTextBoxIL);
+            this.groupBoxIl.Controls.Add(this.label1);
+            this.groupBoxIl.Location = new System.Drawing.Point(685, 44);
+            this.groupBoxIl.Name = "groupBoxIl";
+            this.groupBoxIl.Size = new System.Drawing.Size(399, 613);
+            this.groupBoxIl.TabIndex = 6;
+            this.groupBoxIl.TabStop = false;
+            this.groupBoxIl.Text = "groupBox1";
+            // 
+            // richTextBoxIL
+            // 
+            this.richTextBoxIL.Location = new System.Drawing.Point(15, 73);
+            this.richTextBoxIL.Name = "richTextBoxIL";
+            this.richTextBoxIL.ReadOnly = true;
+            this.richTextBoxIL.Size = new System.Drawing.Size(378, 511);
+            this.richTextBoxIL.TabIndex = 5;
+            this.richTextBoxIL.Text = "";
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.detayGosterToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(165, 28);
+            // 
+            // detayGosterToolStripMenuItem
+            // 
+            this.detayGosterToolStripMenuItem.Name = "detayGosterToolStripMenuItem";
+            this.detayGosterToolStripMenuItem.Size = new System.Drawing.Size(164, 24);
+            this.detayGosterToolStripMenuItem.Text = "Detay Göster";
+            this.detayGosterToolStripMenuItem.Click += new System.EventHandler(this.detayGosterToolStripMenuItem_Click);
+            // 
             // FormILSorgulama
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1110, 751);
+            this.Controls.Add(this.groupBoxIl);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.btnSec);
             this.Controls.Add(this.comboBoxILSecimi);
@@ -121,6 +175,9 @@ namespace ILILCEJSONORNEK
             this.Name = "FormILSorgulama";
             this.Text = "FormILSorgulama";
             this.Load += new System.EventHandler(this.FormILSorgulama_Load);
+            this.groupBoxIl.ResumeLayout(false);
+            this.groupBoxIl.PerformLayout();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -137,5 +194,10 @@ namespace ILILCEJSONORNEK
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox groupBoxIl;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem detayGosterToolStripMenuItem;
+        private System.Windows.Forms.RichTextBox richTextBoxIL;
     }
 }

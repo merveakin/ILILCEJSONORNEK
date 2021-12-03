@@ -53,6 +53,7 @@ namespace ILILCEJSONORNEK
             }
 
 
+            
         }
 
         private void btnSec_Click(object sender, EventArgs e)
@@ -89,5 +90,18 @@ namespace ILILCEJSONORNEK
             listView1.Items.Add(deger);
 
         }
+
+        private void detayGosterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            groupBoxIl.Visible = true;
+            groupBoxIl.Enabled = true;
+
+            ILveILCEBILGILERI secilenIL = (ILveILCEBILGILERI)listView1.FocusedItem.Tag;
+            richTextBoxIL.Text = secilenIL.Bilgi;
+
+        }
+
+        
     }
 }

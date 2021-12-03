@@ -75,5 +75,51 @@ namespace ILveILCEJSON_BLL
 
             return liste;
         }
+
+        public List<ILveILCEBILGILERI> ILAdinaGoreIlceleriGetir(string ilAdi)
+        {
+
+            List<ILveILCEBILGILERI> liste = new List<ILveILCEBILGILERI>();
+            JObject j = JObject.Parse(JsonString);
+
+            //ağrı ---> agri        //ismi Json içindeki gibi değiştirdik.
+
+
+           List<string> ilcelerListem= ilservisi.IlleriGetir().Single(x => x.ILAdi == ilAdi).Ilceleri;
+
+
+            //ilçeler de json içinde ingilizce karakterli halde yazıyor.
+            //bu nedenle onu da çevirdik.
+            ilcelerListem = ilcelerListem.Select(x => DilIslemleri.TurkceKarakterleriIngilizceyeCevir(x.ToLower())).ToList();
+
+            ilAdi = DilIslemleri.TurkceKarakterleriIngilizceyeCevir(ilAdi.ToLower());
+
+
+            foreach (var item in ilcelerListem)
+            {
+                var data = j.SelectToken(ilAdi.ToLower()).SelectToken(item);
+               
+                //bazı illerin ilçelerinde null gelme durumuna yakalanmayalım.
+                
+                if (data != null)
+                {
+                    ILveILCEBILGILERI bilgim = new ILveILCEBILGILERI();
+                    bilgim.Ismi = data["belediye-ismi"] == null ? "" : data["belediye-ismi"].ToObject<string>();
+                    bilgim.Tel = data["belediye-tel"]==null? "": data["belediye-tel"].ToObject<string>();
+                    bilgim.Faks = data["belediye-faks"]==null? "":data["belediye-faks"].ToObject<string>();
+                    bilgim.Mail = data["belediye-mail"] == null ? "" : data["belediye-mail"].ToObject<string>();
+                    bilgim.Web = data["belediye-web"] == null ? "" : data["belediye-web"].ToObject<string>();
+                    bilgim.Nufus = data["nufus"].ToObject<string>();
+                    bilgim.Bilgi = data["bilgi"]==null? "":data["bilgi"].ToObject<string>();
+                    liste.Add(bilgim);
+                }
+            }
+
+
+            return liste;
+        }
+
+
+
     }
 }

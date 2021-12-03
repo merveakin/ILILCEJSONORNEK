@@ -37,5 +37,20 @@ namespace ILILCEJSONORNEK
             this.LayoutMdi(MdiLayout.TileVertical);
 
         }
+
+        private void ıLCESorgulamaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.ActiveMdiChild!=null)
+            {
+                this.ActiveMdiChild.Hide();
+            }
+            FormILEAitILceleriSorgulama frmILCE = new FormILEAitILceleriSorgulama();
+            frmILCE.MdiParent = this;
+            frmILCE.Show();
+
+            this.LayoutMdi(MdiLayout.TileVertical);
+
+
+        }
     }
 }

@@ -8,6 +8,8 @@ namespace ILveILCEJSON_ENTITYMODELS.Classes
 {
     public class ILveILCEBILGILERI
     {
+        public string bilgi;
+
         public byte Plaka { get; set; }
         public string Ismi { get; set; }
         public string Tel { get; set; }
