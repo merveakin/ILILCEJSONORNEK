@@ -57,8 +57,37 @@ namespace ILILCEJSONORNEK
 
         private void btnSec_Click(object sender, EventArgs e)
         {
-            //ILILCEServis deneme = new ILILCEServis();
-            //deneme.BilgileriGetir();
+            //Combobox'ta hangi ili seçtiyse onun iblgilerini listView'de görelim.
+           
+            //1. yol
+
+            IL secilenIL = comboBoxILSecimi.SelectedItem as IL;
+
+            //kısa yol
+            //IL secilenIL = (IL)comboBoxILSecimi.SelectedItem;
+
+
+
+            //Linq ile şart yazyorum.
+            //Where yazdık --> verilen koşula göre bilgileri getirir.
+            //FirstOrderDefault---> where'den dönen liste elemanlarından sadece birini alıyoruz.
+
+
+            ILveILCEBILGILERI secilenILBilgisi =
+                ILILCEServisim.BilgileriGetir()
+                .Where(x => x.Plaka == secilenIL.PlakaKodu)
+                .FirstOrDefault();
+
+            listView1.Items.Clear();
+            ListViewItem deger = new ListViewItem();
+            deger.Text = secilenILBilgisi.Ismi;
+            deger.Tag = secilenILBilgisi;
+            deger.SubItems.Add(secilenILBilgisi.Tel);
+            deger.SubItems.Add(secilenILBilgisi.Faks);
+            deger.SubItems.Add(secilenILBilgisi.Mail);
+            deger.SubItems.Add(secilenILBilgisi.Web);
+            listView1.Items.Add(deger);
+
         }
     }
 }
